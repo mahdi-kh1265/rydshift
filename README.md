@@ -37,36 +37,5 @@ Then work through notebooks in order:
 05_quadrature_chirp_and_dpd_scaffold.ipynb
 ```
 
-## Most important design question
-
-For one EO electrode pair, the current requirement is not optional:
-
-```math
-i_C(t)=C_e\frac{dV_{diff}}{dt}
-```
-
-For a sinusoid:
-
-```math
-I_{peak}=2\pi f C_e V_{diff,peak}
-```
-
-For the present rough full-face geometry, use `C_e â‰ˆ 13 pF` until measured otherwise. At `100 MHz`, `480 Vpeak differential`, this is about `3.9 Apeak` at the EO electrodes. That number drives the RF architecture.
-
-## Design stance captured in this handoff
-
-For broadband chirps, avoid making the core architecture a high-Q resonator bank. Instead, prefer a broadband class-AB-ish RF PA architecture:
-
-```text
-AWG/DDS chirp source
-  -> driver / 0Â°/180Â° phase splitter
-  -> push-pull LDMOS or GaN RF PA
-  -> custom output network including the EO capacitance
-  -> EO electrode pair
-  -> capacitive HV pickup
-  -> calibration / predistortion
-```
-
-The output network is not a generic 50-ohm output plus a random external capacitance. The EO capacitance is part of the output design.
 
 
