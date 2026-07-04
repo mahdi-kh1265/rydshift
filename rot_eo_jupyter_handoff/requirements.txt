@@ -1,0 +1,16 @@
+numpy
+scipy
+matplotlib
+pandas
+jupyterlab
+ipykernel
+nbformat
+scikit-fem
+scikit-rf
+scikit-learn
+sympy
+shapely
+meshio
+pyvista
+schemdraw
+pytest

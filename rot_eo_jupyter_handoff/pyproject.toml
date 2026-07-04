@@ -1,0 +1,9 @@
+[project]
+name = "rot-eo-model"
+version = "0.1.0"
+description = "Jupyter modeling scaffold for rotating electro-optic LiNbO3 frequency shifter design."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

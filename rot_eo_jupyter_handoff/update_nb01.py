@@ -1,0 +1,166 @@
+import json
+import sys
+
+content = {
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "8c038fff",
+   "metadata": {},
+   "source": [
+    "# 01 EO retardance and Vpi\n",
+    "\n",
+    "Computes z-cut LiNbO3 retardance, half-wave field, and Vpi sensitivity using rigorous tensor diagonalization."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "id": "f5d9b3b4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import sys\n",
+    "from pathlib import Path\n",
+    "ROOT = Path.cwd().parent if Path.cwd().name == \"notebooks\" else Path.cwd()\n",
+    "sys.path.insert(0, str(ROOT / \"src\"))\n",
+    "\n",
+    "import numpy as np\n",
+    "import matplotlib.pyplot as plt\n",
+    "from rot_eo_model.constants import DEFAULTS\n",
+    "from rot_eo_model.eo import half_wave_field_V_per_m, vpi_from_gap_V, transverse_eta_matrix, eigen_indices, axis_angle_rad, full_retardance_eigenvalue"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "id": "60f77705",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Epi = half_wave_field_V_per_m(\n",
+    "    lambda0_m=DEFAULTS.lambda0_m, \n",
+    "    length_m=DEFAULTS.crystal_length_m, \n",
+    "    n_o=DEFAULTS.n_o, \n",
+    "    r22_m_per_V=DEFAULTS.r22_m_per_V\n",
+    ")\n",
+    "Vpi = vpi_from_gap_V(\n",
+    "    DEFAULTS.electrode_gap_m, \n",
+    "    lambda0_m=DEFAULTS.lambda0_m, \n",
+    "    length_m=DEFAULTS.crystal_length_m, \n",
+    "    n_o=DEFAULTS.n_o, \n",
+    "    r22_m_per_V=DEFAULTS.r22_m_per_V\n",
+    ")\n",
+    "print(f\"Small-signal Epi = {Epi:.3e} V/m = {Epi/1e5:.2f} kV/cm\")\n",
+    "print(f\"Small-signal Ideal-plate Vpi = {Vpi:.1f} Vpeak differential\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eigenvalue_verification",
+   "metadata": {},
+   "source": [
+    "## Rigorous Numerical Diagonalization\n",
+    "\n",
+    "Let's sweep the applied field and use exact numerical diagonalization of the impermeability tensor to track retardance and eigenaxis rotation."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "id": "eigen_sweep",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Apply a rotating transverse field\n",
+    "phi_drive = np.linspace(0, 2*np.pi, 200)\n",
+    "E0 = Epi # drive with exact small-signal half-wave field\n",
+    "Ex = E0 * np.cos(phi_drive)\n",
+    "Ey = E0 * np.sin(phi_drive)\n",
+    "\n",
+    "retardances = []\n",
+    "angles = []\n",
+    "\n",
+    "for ex, ey in zip(Ex, Ey):\n",
+    "    eta = transverse_eta_matrix(ex, ey, 0.0, n_o=DEFAULTS.n_o, pockels=DEFAULTS.pockels)\n",
+    "    n, vecs = eigen_indices(eta)\n",
+    "    \n",
+    "    # Retardance\n",
+    "    dn = abs(n[1] - n[0])\n",
+    "    gamma = 2 * np.pi / DEFAULTS.lambda0_m * DEFAULTS.crystal_length_m * dn\n",
+    "    retardances.append(gamma)\n",
+    "    \n",
+    "    # Eigenaxis angle\n",
+    "    theta = axis_angle_rad(vecs)\n",
+    "    angles.append(theta)\n",
+    "\n",
+    "retardances = np.array(retardances)\n",
+    "angles = np.array(angles)\n",
+    "\n",
+    "fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))\n",
+    "ax1.plot(np.degrees(phi_drive), retardances / np.pi)\n",
+    "ax1.set_xlabel(\"Drive Phase (deg)\")\n",
+    "ax1.set_ylabel(\"Retardance / $\\pi$\")\n",
+    "ax1.set_title(\"Retardance Ripple (exact tensor)\")\n",
+    "ax1.grid(True)\n",
+    "\n",
+    "ax2.plot(np.degrees(phi_drive), np.degrees(angles))\n",
+    "ax2.set_xlabel(\"Drive Phase (deg)\")\n",
+    "ax2.set_ylabel(\"Eigenaxis Angle $\\theta$ (deg)\")\n",
+    "ax2.set_title(\"Eigenaxis Rotation\")\n",
+    "ax2.grid(True)\n",
+    "plt.tight_layout()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "geometry_warning",
+   "metadata": {},
+   "source": [
+    "## Geometry Sweep and Ambiguity Warning\n",
+    "\n",
+    "If the vendor z-axis is not along the 30 mm direction, change `crystal_length_m` immediately. A 3 mm path length makes Vpi about 10x worse."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "id": "af452382",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Ls = np.linspace(3e-3, 50e-3, 200)\n",
+    "Vpis = [vpi_from_gap_V(DEFAULTS.electrode_gap_m, length_m=L) for L in Ls]\n",
+    "plt.figure(figsize=(6, 4))\n",
+    "plt.plot(Ls*1e3, Vpis, 'b-', label='Vpi')\n",
+    "plt.plot(3, vpi_from_gap_V(DEFAULTS.electrode_gap_m, length_m=3e-3), 'ro', label='L=3mm (Wrong Cut)')\n",
+    "plt.plot(30, vpi_from_gap_V(DEFAULTS.electrode_gap_m, length_m=30e-3), 'go', label='L=30mm (Desired)')\n",
+    "plt.xlabel(\"Optical interaction length L [mm]\")\n",
+    "plt.ylabel(\"Vpi [Vpeak differential]\")\n",
+    "plt.title(\"Vpi sensitivity to optical length\")\n",
+    "plt.grid(True)\n",
+    "plt.legend()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "187f85d7",
+   "metadata": {},
+   "source": [
+    "Next: replace ideal `E=V/d` with FEM-derived field-per-volt at the beam in Notebook 02."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
+
+with open("notebooks/01_eo_retardance_and_vpi.ipynb", "w", encoding="utf-8") as f:
+    json.dump(content, f, indent=1)
