@@ -1,0 +1,19 @@
+* ngspice Smoke Test: Broadband RC-Ladder Lossy Model
+* This file tests the 1e-3 tan(delta) RC-ladder approximation.
+
+.INCLUDE "eo_load_4node_lossy_tand_0.001_ladder_0p5MHz_200MHz.sub"
+
+V1 p_x_ext 0 AC 1 0
+R1 p_x_ext p_x 50
+R2 0 m_x 50
+R3 0 p_y 50
+R4 0 m_y 50
+
+X1 p_x m_x p_y m_y EO_LOAD_4NODE
+
+.control
+ac lin 400 0.5Meg 200Meg
+print v(p_x) i(v1)
+.endc
+
+.END

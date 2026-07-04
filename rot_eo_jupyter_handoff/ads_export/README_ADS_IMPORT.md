@@ -2,29 +2,36 @@
 
 This directory contains the RF-ready linear load models for the locked 500 µm hybrid geometry.
 
-> **WARNING**: These are strictly small-signal linear load models (capacitive with optional dielectric loss). They do **NOT** model the nonlinear LDMOS PA or the RF matching network itself.
+> **WARNING**: These are strictly small-signal linear load models. They do **NOT** model the nonlinear LDMOS PA or the matching network.
 
 ## Touchstone Files (.sNp)
-Use these in ADS using the `SnP` component.
+Use these in ADS using the `SnP` component. The files are written in **RI** (Real/Imaginary) format.
+Includes `_tol_0.8` and `_tol_1.2` tolerance variants for the 4-port core.
 
-### 4-Port Single-Ended (`eo_load_4port_single_ended_*.s4p`)
-Reference impedance: 50 ohms.
-Port definitions:
-1. `+x_full` electrode (left face)
-2. `-x_full` electrode (right face)
-3. `+y_strip` electrode (top face)
-4. `-y_strip` electrode (bottom face)
+## Minimal ADS SnP Smoke Test
+To verify format compliance in ADS before proceeding to layout/matching:
+1. Place an `SnP` component in an empty ADS schematic.
+2. Point it to `eo_load_4port_single_ended_R50.s4p`.
+3. Terminate all four ports with 50 Ohm (`Term` components).
+4. Run an S-parameter sweep from 0.5 MHz to 200 MHz.
+5. Check expected input capacitance (Y-parameters) at low frequency:
+   - $C_{diff,x} \approx 16.88$ pF
+   - $C_{diff,y} \approx 16.18$ pF
+6. Check input impedance magnitude $|Z|$ at 100 MHz:
+   - $|Z_{diff,x}| \approx 94\ \Omega$
+   - $|Z_{diff,y}| \approx 98\ \Omega$
 
-### 2-Port Differential (`eo_load_2port_diff_*.s2p`)
-Reference impedance: 50 ohms or 100 ohms (as marked in filename).
-Port definitions:
-1. `x` differential pair (driven as $+V/2$ and $-V/2$)
-2. `y` differential pair (driven as $+V/2$ and $-V/2$)
+**IMPORTANT**: The 4-port `.s4p` is the definitive authoritative physical model. All other `.s2p` models are derivative reductions.
 
-Frequency Range: 0.5 MHz to 200 MHz
+## SPICE Subcircuits
+`eo_load_4node.sp` is the authoritative pure-capacitance Maxwell model.
 
-## SPICE Subcircuits (.sp)
-Standard text subcircuits defining pairwise Maxwell capacitances.
-`EO_LOAD_4NODE p_x m_x p_y m_y`
+**Important Note on Lossy Models**:
+- The `_at_100MHz.sp` files contain fixed resistors valid EXACTLY at 100 MHz.
+- The `_ladder_0p5MHz_200MHz.sub` files are broadband passive RC-ladder approximations that maintain a nearly constant $\tan\delta$ over the specified bandwidth. These are robust for transient and AC analysis.
 
-For the lossy variants (`tand_1e-4` etc.), parallel resistors are added to simulate the equivalent dielectric conductance evaluated at **100 MHz**. For accurate broadband loss simulation in SPICE, consider using Laplace blocks or replacing the `.sp` with the corresponding Touchstone file in your SPICE simulator.
+## Fixture Parasitics Wrapper
+The `fixture_parasitics_wrapper.net` (ADS syntax) demonstrates how to properly wrap the ideal 4-port core with estimated series inductances and resistances. *These parasitics must be verified against VNA measurements.*
+
+## Measurement Fitting
+`fit_vna_measurements.py` provides a scaffold to extract $C_{node}$, $\tan\delta$, and series $R/L$ directly from VNA `.s4p` files.

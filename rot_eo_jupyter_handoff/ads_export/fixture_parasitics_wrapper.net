@@ -1,0 +1,36 @@
+; ADS Netlist demonstrating how to wrap the core EO load model with estimated fixture parasitics
+; You can import this or reconstruct it in your ADS schematic.
+
+; Define the authoritative 4-port core model component
+S4P:eo_core Port1=p_x_in Port2=m_x_in Port3=p_y_in Port4=m_y_in File="eo_load_4port_single_ended_R50.s4p"
+
+; Define typical ranges for fixture parasitics (these MUST be validated via VNA)
+; R_s represents contact and trace resistance
+; L_s represents wirebond and trace inductance
+#define R_S_EST 0.1  ; Ohms
+#define L_S_EST 1.0  ; nH
+
+; External test ports
+Port:P1 p_x_ext 0 Num=1 Z=50 Ohm
+Port:P2 m_x_ext 0 Num=2 Z=50 Ohm
+Port:P3 p_y_ext 0 Num=3 Z=50 Ohm
+Port:P4 m_y_ext 0 Num=4 Z=50 Ohm
+
+; Add series R and L for the +x electrode
+R:Rx_p p_x_ext p_x_mid R=R_S_EST
+L:Lx_p p_x_mid p_x_in L=L_S_EST
+
+; Add series R and L for the -x electrode
+R:Rx_m m_x_ext m_x_mid R=R_S_EST
+L:Lx_m m_x_mid m_x_in L=L_S_EST
+
+; Add series R and L for the +y electrode
+R:Ry_p p_y_ext p_y_mid R=R_S_EST
+L:Ly_p p_y_mid p_y_in L=L_S_EST
+
+; Add series R and L for the -y electrode
+R:Ry_m m_y_ext m_y_mid R=R_S_EST
+L:Ly_m m_y_mid m_y_in L=L_S_EST
+
+; S-parameter simulation block
+SP:SP1 Start=0.5 MHz Stop=200 MHz Step=0.5 MHz
