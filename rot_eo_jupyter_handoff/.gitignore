@@ -1,8 +1,0 @@
-.venv/
-__pycache__/
-.ipynb_checkpoints/
-*.pyc
-*.egg-info/
-.DS_Store
-figures/*.png
-figures/*.pdf

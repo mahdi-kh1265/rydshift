@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+﻿# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
@@ -217,3 +217,14 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 ./rot_eo_jupyter_handoff
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
+*.egg-info/
+.DS_Store
+figures/*.png
+figures/*.pdf
+
+rot_eo_knowledge/
+
