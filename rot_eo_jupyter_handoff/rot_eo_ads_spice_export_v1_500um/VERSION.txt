@@ -1,0 +1,6 @@
+Package: rot_eo_ads_spice_export
+Version: v1_500um
+Generated: 2026-07-04T02:21:32.444400
+Geometry: Locked hybrid 500 µm setback
+Source: rf_ready_geometry_spec.json
+Generator Hash: 0c1a6fd373f391a2bd3a93d835a95e13857bb88add5c85e869614b35efce1579

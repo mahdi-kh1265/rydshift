@@ -1,0 +1,43 @@
+# Manifest
+
+- `MANIFEST.md`: Package documentation
+- `README_START_HERE.md`: Package documentation
+- `ADS\ADS_FIRST_USE_CHECKLIST.md`: Supporting asset/script
+- `ADS\eo_load_2port_diff_R100.s2p`: Supporting asset/script
+- `ADS\eo_load_2port_diff_R50.s2p`: Supporting asset/script
+- `ADS\eo_load_2port_diff_R50_tand_0.0001.s2p`: Supporting asset/script
+- `ADS\eo_load_2port_diff_R50_tand_0.0005.s2p`: Supporting asset/script
+- `ADS\eo_load_2port_diff_R50_tand_0.001.s2p`: Supporting asset/script
+- `ADS\eo_load_4port_single_ended_R50.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_4port_single_ended_R50_tand_0.0001.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_4port_single_ended_R50_tand_0.0005.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_4port_single_ended_R50_tand_0.001.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_4port_single_ended_R50_tol_0.8.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_4port_single_ended_R50_tol_1.2.s4p`: Touchstone (ADS/RF), Authoritative or derived
+- `ADS\eo_load_xdiff_R50.s1p`: Supporting asset/script
+- `ADS\eo_load_ydiff_R50.s1p`: Supporting asset/script
+- `ADS\fixture_parasitics_wrapper.net`: Supporting asset/script
+- `geometry_source\geometry_summary.md`: Supporting asset/script
+- `geometry_source\port_map.md`: Supporting asset/script
+- `geometry_source\rf_ready_geometry_spec.json`: SPICE netlist, Authoritative or derived lossy
+- `scripts\fit_vna_measurements.py`: Supporting asset/script
+- `scripts\generate_ads_exports.py`: Supporting asset/script
+- `scripts\validate_export_package.py`: Supporting asset/script
+- `SPICE_LTspice_ngspice\eo_load_4node.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0001.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0001_at_100MHz.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0001_ladder_0p5MHz_200MHz.sub`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0005.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0005_at_100MHz.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.0005_ladder_0p5MHz_200MHz.sub`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.001.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.001_at_100MHz.sp`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\eo_load_4node_lossy_tand_0.001_ladder_0p5MHz_200MHz.sub`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\SPICE_FIRST_USE_CHECKLIST.md`: Supporting asset/script
+- `SPICE_LTspice_ngspice\test_ltspice_core_cap.cir`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\test_ngspice_core_cap.cir`: SPICE netlist, Authoritative or derived lossy
+- `SPICE_LTspice_ngspice\test_ngspice_ladder_loss.cir`: SPICE netlist, Authoritative or derived lossy
+- `validation\ads_export_strict_validation.md`: Supporting asset/script
+- `validation\ads_spice_format_compatibility_audit.md`: SPICE netlist, Authoritative or derived lossy
+- `validation\extended_audit_report.md`: Supporting asset/script
+- `validation\validation_plots.png`: Supporting asset/script

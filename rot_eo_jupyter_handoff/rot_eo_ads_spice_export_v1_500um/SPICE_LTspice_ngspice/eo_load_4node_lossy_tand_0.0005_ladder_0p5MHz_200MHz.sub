@@ -1,0 +1,91 @@
+* Broadband RC-Ladder EO Load Subcircuit: eo_load_4node_lossy_tand_0.0005_ladder_0p5MHz_200MHz.sub
+* Loss tangent: 0.0005
+* This model approximates constant tan(delta) over 0.5-200 MHz.
+* It is a finite-band approximation, not an exact all-frequency constant-tand law.
+
+.SUBCKT EO_LOAD_4NODE p_x m_x p_y m_y
+* Edge: p_x to m_x, base C = 2.9435e-12
+Cinf_1 p_x m_x 2.940384e-12
+Ck_1_0 p_x n_int_1_0 1.933521e-15
+Rk_1_0 n_int_1_0 m_x 4.938812e+08
+Ck_1_1 p_x n_int_1_1 1.553998e-15
+Rk_1_1 n_int_1_1 m_x 1.194704e+08
+Ck_1_2 p_x n_int_1_2 1.504839e-15
+Rk_1_2 n_int_1_2 m_x 2.398614e+07
+Ck_1_3 p_x n_int_1_3 1.566007e-15
+Rk_1_3 n_int_1_3 m_x 4.481218e+06
+Ck_1_4 p_x n_int_1_4 1.485077e-15
+Rk_1_4 n_int_1_4 m_x 9.187144e+05
+Ck_1_5 p_x n_int_1_5 1.995433e-15
+Rk_1_5 n_int_1_5 m_x 1.329327e+05
+* Edge: p_x to p_y, base C = 1.3936e-11
+Cinf_2 p_x p_y 1.392153e-11
+Ck_2_0 p_x n_int_2_0 9.154438e-15
+Rk_2_0 n_int_2_0 p_y 1.043133e+08
+Ck_2_1 p_x n_int_2_1 7.357553e-15
+Rk_2_1 n_int_2_1 p_y 2.523350e+07
+Ck_2_2 p_x n_int_2_2 7.124804e-15
+Rk_2_2 n_int_2_2 p_y 5.066143e+06
+Ck_2_3 p_x n_int_2_3 7.414411e-15
+Rk_2_3 n_int_2_3 p_y 9.464839e+05
+Ck_2_4 p_x n_int_2_4 7.031236e-15
+Rk_2_4 n_int_2_4 p_y 1.940429e+05
+Ck_2_5 p_x n_int_2_5 9.447565e-15
+Rk_2_5 n_int_2_5 p_y 2.807689e+04
+* Edge: p_x to m_y, base C = 1.3936e-11
+Cinf_3 p_x m_y 1.392153e-11
+Ck_3_0 p_x n_int_3_0 9.154438e-15
+Rk_3_0 n_int_3_0 m_y 1.043133e+08
+Ck_3_1 p_x n_int_3_1 7.357553e-15
+Rk_3_1 n_int_3_1 m_y 2.523350e+07
+Ck_3_2 p_x n_int_3_2 7.124804e-15
+Rk_3_2 n_int_3_2 m_y 5.066143e+06
+Ck_3_3 p_x n_int_3_3 7.414411e-15
+Rk_3_3 n_int_3_3 m_y 9.464839e+05
+Ck_3_4 p_x n_int_3_4 7.031236e-15
+Rk_3_4 n_int_3_4 m_y 1.940429e+05
+Ck_3_5 p_x n_int_3_5 9.447565e-15
+Rk_3_5 n_int_3_5 m_y 2.807689e+04
+* Edge: m_x to p_y, base C = 1.3936e-11
+Cinf_4 m_x p_y 1.392153e-11
+Ck_4_0 m_x n_int_4_0 9.154438e-15
+Rk_4_0 n_int_4_0 p_y 1.043133e+08
+Ck_4_1 m_x n_int_4_1 7.357553e-15
+Rk_4_1 n_int_4_1 p_y 2.523350e+07
+Ck_4_2 m_x n_int_4_2 7.124804e-15
+Rk_4_2 n_int_4_2 p_y 5.066143e+06
+Ck_4_3 m_x n_int_4_3 7.414411e-15
+Rk_4_3 n_int_4_3 p_y 9.464839e+05
+Ck_4_4 m_x n_int_4_4 7.031236e-15
+Rk_4_4 n_int_4_4 p_y 1.940429e+05
+Ck_4_5 m_x n_int_4_5 9.447565e-15
+Rk_4_5 n_int_4_5 p_y 2.807689e+04
+* Edge: m_x to m_y, base C = 1.3936e-11
+Cinf_5 m_x m_y 1.392153e-11
+Ck_5_0 m_x n_int_5_0 9.154438e-15
+Rk_5_0 n_int_5_0 m_y 1.043133e+08
+Ck_5_1 m_x n_int_5_1 7.357553e-15
+Rk_5_1 n_int_5_1 m_y 2.523350e+07
+Ck_5_2 m_x n_int_5_2 7.124804e-15
+Rk_5_2 n_int_5_2 m_y 5.066143e+06
+Ck_5_3 m_x n_int_5_3 7.414411e-15
+Rk_5_3 n_int_5_3 m_y 9.464839e+05
+Ck_5_4 m_x n_int_5_4 7.031236e-15
+Rk_5_4 n_int_5_4 m_y 1.940429e+05
+Ck_5_5 m_x n_int_5_5 9.447565e-15
+Rk_5_5 n_int_5_5 m_y 2.807689e+04
+* Edge: p_y to m_y, base C = 2.2430e-12
+Cinf_6 p_y m_y 2.240645e-12
+Ck_6_0 p_y n_int_6_0 1.473390e-15
+Rk_6_0 n_int_6_0 m_y 6.481172e+08
+Ck_6_1 p_y n_int_6_1 1.184185e-15
+Rk_6_1 n_int_6_1 m_y 1.567802e+08
+Ck_6_2 p_y n_int_6_2 1.146724e-15
+Rk_6_2 n_int_6_2 m_y 3.147686e+07
+Ck_6_3 p_y n_int_6_3 1.193336e-15
+Rk_6_3 n_int_6_3 m_y 5.880674e+06
+Ck_6_4 p_y n_int_6_4 1.131665e-15
+Rk_6_4 n_int_6_4 m_y 1.205623e+06
+Ck_6_5 p_y n_int_6_5 1.520569e-15
+Rk_6_5 n_int_6_5 m_y 1.744468e+05
+.ENDS
