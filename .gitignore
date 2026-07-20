@@ -1,4 +1,4 @@
-﻿# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
 *$py.class
@@ -228,3 +228,11 @@ figures/*.pdf
 
 rot_eo_knowledge/
 
+# KiCad ignores
+*.lck
+*.bak
+*-bak
+*.bck
+*-bck
+.history/
+rydshift_controller/.history/
