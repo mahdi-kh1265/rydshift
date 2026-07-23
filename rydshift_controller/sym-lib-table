@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name "LTC5598") (type "KiCad") (uri "${KIPRJMOD}/libraries/ul_LTC5598IUF-PBF/KiCADv6") (options " ") (descr " "))
+  (lib (name "AD8337") (type "KiCad") (uri "${KIPRJMOD}/libraries/ul_AD8337BCPZ-REEL/KiCADv6") (options " ") (descr " "))
+  (lib (name "TSS-13LN+") (type "KiCad") (uri "${KIPRJMOD}/libraries/ul_TSS-13LN-/KiCADv6") (options " ") (descr " "))
+  (lib (name "PMA3-43-1W+") (type "KiCad") (uri "${KIPRJMOD}/libraries/LIB_PMA3-43-1W+/PMA3-43-1W+/KiCad") (options " ") (descr " "))
+  (lib (name "SYPS-2-22HP+") (type "KiCad") (uri "${KIPRJMOD}/libraries/LIB_SYPS-2-22HP+/SYPS-2-22HP+/KiCad") (options " ") (descr " "))
+  (lib (name "ADL5513") (type "KiCad") (uri "${KIPRJMOD}/libraries/LIB_ADL5513ACPZ-R7/ADL5513ACPZ-R7/KiCad") (options " ") (descr " "))
+)

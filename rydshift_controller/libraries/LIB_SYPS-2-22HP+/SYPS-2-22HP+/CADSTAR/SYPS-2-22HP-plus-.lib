@@ -1,0 +1,18 @@
+.SYPS-2-22HP-plus- :1 ;RF Power Divider 2 MHz ~ 200 MHz Isolation (Min) 18dB, 1.45 VSWR (Max), 4 Imbalance (Max) 6-SMD, No Lead
+SYPS222HP
+*STM IC
+*NGS
+*PLB 1="GROUND_1" 2="GROUND_2" 4="PORT 2" 5="PORT 1" 6="GROUND_3" 8="SUM PORT"
+*MXP 6
+*DFN SYPS-2-22HP-plus-
+~!Manufacturer_Name (Mini-Circuits)
+~!Manufacturer_Part_Number (SYPS-2-22HP+)
+~!Mouser Part Number (139-SYPS-2-22HP)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Mini-Circuits/SYPS-2-22HP%2b?qs=xZ%2FP%252Ba9zWqY1riY9ziwtAg%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (https://www.minicircuits.com/pdfs/SYPS-2-22HP+.pdf)
+~!Height (6.35mm)
+~!3D_Model (SYPS-2-22HP+)
+SYPS-2-22HP-plus-
+1.1!U 2.1!U 4.1!U 5.1!U 6.1!U 8.1!U 

@@ -1,0 +1,9 @@
+Manufacturer=Mini-Circuits
+PartNumber=SYPS-2-22HP+
+PartCategory=Integrated Circuit
+PackageCategory=Other
+PinCount=6
+Version=1.10
+Released=2023-12-10 20:38:33
+Downloaded=2026-07-21 05:46:07
+3D=Y
