@@ -429,7 +429,7 @@
         "uuid": "2b15a9df-cbe9-4e34-a5cc-e78006d66b2a"
       }
     ],
-    "used_designators": "IC1-7,R1-19,TR1-6,L1-14,J1-6,#PWR1-123,C1-58,U1-17",
+    "used_designators": "IC1-8,R1-34,TR1-6,L1-14,J1-8,#PWR1-151,C1-71,Q1-2,U1-18",
     "variants": []
   },
   "sheets": [
@@ -440,6 +440,10 @@
     [
       "383a5cec-b847-4593-a62d-56fef5d95ec0",
       "sheet2"
+    ],
+    [
+      "67df3457-f399-4be5-b8f4-1d47cffff843",
+      "sheet3"
     ]
   ],
   "text_variables": {},

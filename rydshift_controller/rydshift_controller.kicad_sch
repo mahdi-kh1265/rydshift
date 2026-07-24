@@ -14371,6 +14371,52 @@
 			)
 		)
 	)
+	(sheet
+		(at -347.98 -7.62)
+		(size 132.08 222.25)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "67df3457-f399-4be5-b8f4-1d47cffff843")
+		(property "Sheetname" "sheet3"
+			(at -347.98 -8.3316 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "sheet3.kicad_sch"
+			(at -347.98 215.2146 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "rydshift_controller"
+				(path "/2b15a9df-cbe9-4e34-a5cc-e78006d66b2a"
+					(page "3")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")
