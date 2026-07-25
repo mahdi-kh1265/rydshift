@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PMA3-43-1W+
+D RF Amplifier SMT MMIC, Power Amplifier, 10 MHz to 4000 MHz, 50ohm, 3x3 mm QFN Style Package
+K
+F https://www.minicircuits.com/pdfs/PMA3-43-1W+.pdf
+$ENDCMP
+#
+#End Doc Library

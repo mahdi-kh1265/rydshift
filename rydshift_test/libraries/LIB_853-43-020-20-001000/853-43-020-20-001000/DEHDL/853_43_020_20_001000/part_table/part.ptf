@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART '853_43_020_20_001000'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Mill-Max", "853-43-020-20-001000" (!) = "", "8534302020001000", "Other", "575-8534302020001000", "https://www.mouser.co.uk/ProductDetail/Mill-Max/853-43-020-20-001000?qs=s8Nb1z4Wn%2FSdjHDJ6X1ElA%3D%3D", "IC & Component Sockets STANDARD SOCKET HEADER", "https://www.mill-max.com/catalog/download/2017-11%3A034.pdf", "3.05 mm"
+END_PART
+
+END.

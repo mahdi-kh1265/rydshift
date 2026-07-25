@@ -1,0 +1,18 @@
+.ADL5513ACPZ-R7 :1 ;ANALOG DEVICES - ADL5513ACPZ-R7 - DETECTOR, 1MHZ - 4GHZ, 80DB, LFCSP-16
+QFN50P300X300X80-17N-D
+*STM IC
+*NGS
+*PLB 1="VPOS_1" 2="INHI" 3="INLO" 4="VPOS_2" 5="NC_1" 6="NC_2" 7="NC_3" 8="NC_4" 9="TADJ" 10="COMM" 11="VSET" 12="VOUT" 13="NC_5" 14="CLPF" 15="NC_6" 16="NC_7" 17="EP"
+*MXP 17
+*DFN ADL5513ACPZ-R7
+~!Manufacturer_Name (Analog Devices)
+~!Manufacturer_Part_Number (ADL5513ACPZ-R7)
+~!Mouser Part Number (584-ADL5513ACPZ-R7)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Analog-Devices/ADL5513ACPZ-R7?qs=BpaRKvA4VqGe6%2FPlUcoEpw%3D%3D)
+~!Arrow Part Number (ADL5513ACPZ-R7)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/adl5513acpz-r7/analog-devices?utm_currency=USD&region=nac)
+~!Link Datasheet (https://www.analog.com/media/en/technical-documentation/data-sheets/ADL5513.pdf)
+~!Height (0.8mm)
+~!3D_Model (ADL5513ACPZ-R7)
+ADL5513ACPZ-R7
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 12.1!U 11.1!U 10.1!U 9.1!U 17.1!U 16.1!U 15.1!U 14.1!U 13.1!U 

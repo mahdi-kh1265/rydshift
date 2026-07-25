@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "SYPS-2-22HP+"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-12-10-20:38:33)
+    (mountForm default
+        (footprintRef "SYPS222HP")
+        (spec "System")
+    )
+)

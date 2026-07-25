@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'SYPS_2_22HP_'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Mini-Circuits", "SYPS-2-22HP+" (!) = "", "SYPS222HP", "Other", "139-SYPS-2-22HP", "https://www.mouser.co.uk/ProductDetail/Mini-Circuits/SYPS-2-22HP%2b?qs=xZ%2FP%252Ba9zWqY1riY9ziwtAg%3D%3D", "", "", "RF Power Divider 2 MHz ~ 200 MHz Isolation (Min) 18dB, 1.45 VSWR (Max), 4 Imbalance (Max) 6-SMD, No Lead", "https://www.minicircuits.com/pdfs/SYPS-2-22HP+.pdf", "6.35 mm"
+END_PART
+
+END.

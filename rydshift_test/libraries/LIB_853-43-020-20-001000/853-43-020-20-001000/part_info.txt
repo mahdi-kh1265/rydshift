@@ -1,0 +1,9 @@
+Manufacturer=Mill-Max
+PartNumber=853-43-020-20-001000
+PartCategory=Connector
+PackageCategory=Other
+PinCount=20
+Version=1.1
+Released=2024-04-12 03:57:43
+Downloaded=2026-07-24 06:05:56
+3D=Y

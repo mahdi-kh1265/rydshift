@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "PMA3-43-1W+"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-03-12-06:25:23)
+    (mountForm default
+        (footprintRef "QFN51P300X300X89-13N")
+        (spec "System")
+    )
+)

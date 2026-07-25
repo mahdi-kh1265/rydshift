@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "SYPS222HP"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "SYPS222HP")
+        (spec "default")
+    )
+)
