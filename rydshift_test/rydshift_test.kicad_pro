@@ -529,7 +529,7 @@
         "clearance": 0.3,
         "name": "PWR ",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
+        "priority": 1,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.5,
         "tuning_profile": "",
@@ -540,12 +540,19 @@
         "clearance": 0.0,
         "name": "RF",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 1,
+        "priority": 2,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.45,
         "tuning_profile": "",
         "via_diameter": 0.6,
         "via_drill": 0.3
+      },
+      {
+        "name": "Rt",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "tuning_profile": ""
       }
     ],
     "meta": {
@@ -721,7 +728,7 @@
         "uuid": "dd979a1b-e907-4885-bb87-593982e092c5"
       }
     ],
-    "used_designators": "J1-5,L7-9,R13-14,R31,IC1,C27-36,#PWR51-70",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [
